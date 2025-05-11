@@ -3,32 +3,35 @@ name: Publish Python package
 on:
   push:
     branches:
-      - master  # yoki master, qaysi branchda ishlayotganingizga qarab
+      - master
+  workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    environment: pypi  # Yaratilgan environment nomini shu yerga qo'ying
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-    - name: Set up Python
-      uses: actions/setup-python@v2
-      with:
-        python-version: '3.8'  # Python versiyasini tanlang
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.8'
 
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install setuptools wheel twine
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install setuptools wheel twine
 
-    - name: Build the package
-      run: python setup.py sdist bdist_wheel
+      - name: Build the package
+        run: |
+          python setup.py sdist bdist_wheel
 
-    - name: Upload package to PyPI
-      run: |
-        python -m twine upload dist/* --verbose
-      env:
-        TWINE_USERNAME: ${{ secrets.PYPI_USERNAME }}
-        TWINE_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
+      - name: Upload the package to PyPI
+        run: |
+          twine upload dist/* -u ${{ secrets.PYPI_USERNAME }} -p ${{ secrets.PYPI_PASSWORD }}
+        env:
+          TWINE_USERNAME: ${{ secrets.PYPI_USERNAME }}
+          TWINE_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
