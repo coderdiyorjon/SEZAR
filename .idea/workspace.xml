@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b4c8eeb3-90d5-43e0-a762-7074bea3d2a1" name="Changes" comment="" />
+    <list default="true" id="b4c8eeb3-90d5-43e0-a762-7074bea3d2a1" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/sezar-0.0.0-py3-none-any.whl" beforeDir="false" afterPath="$PROJECT_DIR$/dist/sezar-0.0.0-py3-none-any.whl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/sezar-0.0.0.tar.gz" beforeDir="false" afterPath="$PROJECT_DIR$/dist/sezar-0.0.0.tar.gz" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -71,7 +75,7 @@
       <option name="presentableId" value="Default" />
       <updated>1746969228783</updated>
       <workItem from="1746969229913" duration="630000" />
-      <workItem from="1746969964198" duration="3700000" />
+      <workItem from="1746969964198" duration="5194000" />
     </task>
     <servers />
   </component>
